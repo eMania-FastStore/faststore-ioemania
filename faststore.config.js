@@ -1,80 +1,99 @@
+
 module.exports = {
   seo: {
-    title: "NextJSStore",
-    description: "Fast Demo Store",
-    titleTemplate: "%s | FastStore",
-    author: "Store Framework",
-  },
-  theme: "custom-theme",
-  platform: "vtex",
+  "title": "eMania equipamentos de Foto, Vídeos e Cinema",
+  "description": "Compre os melhores Equipamentos de Fotografia, Vídeo e Cinema, Maiores Marcas Profissionais como Canon, Sony, FujiFilm, Zhiyun, Sennheiser, DJI e mais",
+  "titleTemplate": "%s | eMania",
+  "author": "eMania"
+},
+
+  // Theming
+  theme: 'custom-theme',
+
+  // Ecommerce Platform
+  platform: 'vtex',
+
+  // Platform specific configs for API
   api: {
-    storeId: "storeframework",
-    workspace: "master",
-    environment: "vtexcommercestable",
-    hideUnavailableItems: false,
+    storeId: "ioemania",
+    workspace: 'master',
+    environment: 'vtexcommercestable',
+    hideUnavailableItems: true,
     incrementAddress: false,
   },
+
+  // Default session
   session: {
     currency: {
-      code: "USD",
-      symbol: "$",
+      code: "BRL",
+      symbol: "R$",
     },
-    locale: "en-US",
-    channel: '{"salesChannel":"1","regionId":""}',
-    country: "USA",
+    locale: "pt-BR",
+    channel: '{"salesChannel":1,"regionId":""}',
+    country: "BRA",
     deliveryMode: null,
     addressType: null,
     postalCode: null,
     geoCoordinates: null,
     person: null,
   },
+
   cart: {
-    id: "",
+    id: '',
     items: [],
     messages: [],
     shouldSplitItem: true,
   },
-  storeUrl: "https://vtexfaststore.com",
-  secureSubdomain: "https://secure.vtexfaststore.com",
+
+  // Production URLs
+  storeUrl: "https://ioemania.vtex.app",
+  secureSubdomain: "https://secure.vtexfaststore.com/",
   checkoutUrl: "https://secure.vtexfaststore.com/checkout",
   loginUrl: "https://secure.vtexfaststore.com/api/io/login",
   accountUrl: "https://secure.vtexfaststore.com/api/io/account",
+
   previewRedirects: {
-    home: "/",
-    plp: "/office",
-    search: "/s?q=headphone",
-    pdp: "/apple-magic-mouse/p",
+    home: '/',
+    plp: "/est%C3%BAdio%20fotogr%C3%A1fico",
+    search: "/s?q=WorldView",
+    pdp: "/suporte-2-em-1-smartphone-e-tablet-para-tripe-e-bastoes-selfie/p",
   },
+
+  // Lighthouse CI
   lighthouse: {
-    server: "http://localhost:3000",
+    server: process.env.BASE_SITE_URL || 'http://localhost:3000',
     pages: {
-      home: "/",
-      pdp: "/apple-magic-mouse/p",
-      collection: "/office",
+      home: '/',
+      pdp: "/suporte-2-em-1-smartphone-e-tablet-para-tripe-e-bastoes-selfie/p",
+      collection: "/est%C3%BAdio%20fotogr%C3%A1fico",
     },
   },
+
+  // E2E CI
   cypress: {
     pages: {
-      home: "/",
-      pdp: "/apple-magic-mouse/p",
-      collection: "/office",
-      collection_2: "/technology",
-      collection_filtered:
-        "/office/?category-1=office&marca=acer&facets=category-1%2Cmarca",
-      search: "/s?q=orange",
+      home: '/',
+      pdp: "/suporte-2-em-1-smartphone-e-tablet-para-tripe-e-bastoes-selfie/p",
+      collection: "/est%C3%BAdio%20fotogr%C3%A1fico",
+      collection_filtered: "/est%C3%BAdio%20fotogr%C3%A1fico/?category-1=est%C3%BAdio%20fotogr%C3%A1fico&brand=WorldView&facets=category-1%2Cbrand%27",
+      search: "/s?q=WorldView",
     },
+    browser: 'electron',
   },
+
   analytics: {
-    gtmContainerId: "GTM-PGHZ95N",
+    // https://developers.google.com/tag-platform/tag-manager/web#standard_web_page_installation,
+    gtmContainerId: "",
   },
+
   experimental: {
     nodeVersion: 18,
     cypressVersion: 12,
   },
-  account: "storeframework",
+
   vtexHeadlessCms: {
     webhookUrls: [
-      "https://storeframework.myvtex.com/cms-releases/webhook-releases",
+      "https://ioemania.myvtex.com/cms-releases/webhook-releases",
     ],
   },
-};
+}
