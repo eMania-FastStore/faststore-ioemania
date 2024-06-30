@@ -43,7 +43,7 @@
           }
         },
         "searchHistory": {
-          "title": "Search History",
+          "title": "Histórico de busca",
           "type": "object",
           "properties": {
             "title": {
@@ -82,7 +82,7 @@
           }
         },
         "searchTop": {
-          "title": "Top Search",
+          "title": "Top buscas",
           "type": "object",
           "properties": {
             "title": {
@@ -2039,6 +2039,14 @@
           }
         }
       }
+    }
+  },
+  {
+    "name": "SideNavMenu",
+    "schema": {
+      "title": "SideNavMenu",
+      "description": "Create Custom Menu",
+      "type": "object"
     }
   }
 ]
