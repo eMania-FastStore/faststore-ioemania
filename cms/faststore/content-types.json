@@ -1,0 +1,267 @@
+[
+  {
+    "id": "globalSections",
+    "name": "Global Sections",
+    "scopes": ["global"],
+    "configurationSchemaSets": [],
+    "isSingleton": true
+  },
+  {
+    "id": "landingPage",
+    "name": "Landing Page",
+    "scopes": ["landing", "custom"],
+    "configurationSchemaSets": [
+      {
+        "name": "Settings",
+        "configurations": [
+          {
+            "name": "seo",
+            "schema": {
+              "title": "SEO",
+              "description": "Search Engine Optimization options",
+              "type": "object",
+              "widget": {
+                "ui:ObjectFieldTemplate": "GoogleSeoPreview"
+              },
+              "required": ["slug", "title", "description"],
+              "properties": {
+                "slug": {
+                  "title": "Path",
+                  "type": "string",
+                  "default": "/"
+                },
+                "title": {
+                  "title": "Default page title",
+                  "description": "Display this title when no other tile is available",
+                  "type": "string",
+                  "default": "FastStore Starter"
+                },
+                "description": {
+                  "title": "Meta tag description",
+                  "type": "string",
+                  "default": "A beautifully designed store"
+                },
+                "canonical": {
+                  "title": "Canonical url for the page",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "home",
+    "name": "Home",
+    "scopes": ["home"],
+    "isSingleton": true,
+    "configurationSchemaSets": [
+      {
+        "name": "Settings",
+        "configurations": [
+          {
+            "name": "seo",
+            "schema": {
+              "title": "SEO",
+              "description": "Search Engine Optimization options",
+              "type": "object",
+              "widget": {
+                "ui:ObjectFieldTemplate": "GoogleSeoPreview"
+              },
+              "required": ["slug", "title", "description"],
+              "properties": {
+                "slug": {
+                  "title": "Path",
+                  "type": "string",
+                  "default": "/"
+                },
+                "title": {
+                  "title": "Default page title",
+                  "description": "Display this title when no other tile is available",
+                  "type": "string",
+                  "default": "FastStore Starter"
+                },
+                "description": {
+                  "title": "Meta tag description",
+                  "type": "string",
+                  "default": "A beautifully designed store"
+                },
+                "canonical": {
+                  "title": "Canonical url for the page",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pdp",
+    "name": "Product Page",
+    "scopes": ["pdp"],
+    "configurationSchemaSets": [
+      {
+        "name": "Settings",
+        "configurations": [
+          {
+            "name": "template",
+            "schema": {
+              "title": "Template",
+              "type": "object",
+              "properties": {
+                "value": {
+                  "title": "PDP template value (e.g. Slug: /apple-magic-mouse/p OR /department/category/subcategory/)",
+                  "type": "string",
+                  "description": "Possible values: the PDP slug template (e.g. '/apple-magic-mouse/p'); A PLP template (e.g. '/department/' OR '/department/category/' OR '/department/category/subcategory/'). If empty, this template will be the generic PDP."
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "plp",
+    "name": "Product List Page",
+    "scopes": ["plp"],
+    "configurationSchemaSets": [
+      {
+        "name": "Settings",
+        "configurations": [
+          {
+            "name": "template",
+            "schema": {
+              "title": "Template",
+              "type": "object",
+              "properties": {
+                "value": {
+                  "title": "PLP template value (e.g. Slug: /department/category/subcategory)",
+                  "type": "string",
+                  "description": "PLP slug template (e.g. /office or /office/chairs) representing the /department/category/subcategory template). If this field is left empty, the generic PLP template will be applied."
+                }
+              }
+            }
+          },
+          {
+            "name": "productGallery",
+            "schema": {
+              "title": "Product Gallery",
+              "description": "ProductGallery options",
+              "type": "object",
+              "required": ["itemsPerPage", "sortBySelection"],
+              "properties": {
+                "itemsPerPage": {
+                  "title": "Number of ProductCards per page",
+                  "type": "integer",
+                  "default": 12
+                },
+                "sortBySelection": {
+                  "title": "Default sort by value",
+                  "type": "string",
+                  "default": "score_desc",
+                  "enumNames": [
+                    "Price, descending",
+                    "Price, ascending",
+                    "Top sales",
+                    "Name, A-Z",
+                    "Name, Z-A",
+                    "Release date",
+                    "Discount",
+                    "Relevance"
+                  ],
+                  "enum": [
+                    "price_desc",
+                    "price_asc",
+                    "orders_desc",
+                    "name_asc",
+                    "name_desc",
+                    "release_desc",
+                    "discount_desc",
+                    "score_desc"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "search",
+    "name": "Search Page",
+    "scopes": ["plp", "search"],
+    "isSingleton": true,
+    "configurationSchemaSets": [
+      {
+        "name": "Settings",
+        "configurations": [
+          {
+            "name": "productGallery",
+            "schema": {
+              "title": "Product Gallery",
+              "description": "ProductGallery options",
+              "type": "object",
+              "required": ["itemsPerPage", "sortBySelection"],
+              "properties": {
+                "itemsPerPage": {
+                  "title": "Number of ProductCards per page",
+                  "type": "integer",
+                  "default": 12
+                },
+                "sortBySelection": {
+                  "title": "Default sort by value",
+                  "type": "string",
+                  "default": "score_desc",
+                  "enumNames": [
+                    "Price, descending",
+                    "Price, ascending",
+                    "Top sales",
+                    "Name, A-Z",
+                    "Name, Z-A",
+                    "Release date",
+                    "Discount",
+                    "Relevance"
+                  ],
+                  "enum": [
+                    "price_desc",
+                    "price_asc",
+                    "orders_desc",
+                    "name_asc",
+                    "name_desc",
+                    "release_desc",
+                    "discount_desc",
+                    "score_desc"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "login",
+    "name": "Login",
+    "configurationSchemaSets": [],
+    "isSingleton": true
+  },
+  {
+    "id": "500",
+    "name": "Error 500",
+    "configurationSchemaSets": [],
+    "isSingleton": true
+  },
+  {
+    "id": "404",
+    "name": "Error 404",
+    "configurationSchemaSets": [],
+    "isSingleton": true
+  }
+]
