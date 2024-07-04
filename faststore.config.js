@@ -69,18 +69,6 @@ module.exports = {
     },
   },
 
-  // E2E CI
-  cypress: {
-    pages: {
-      home: '/',
-      pdp: "/suporte-2-em-1-smartphone-e-tablet-para-tripe-e-bastoes-selfie/p",
-      collection: "/est%C3%BAdio%20fotogr%C3%A1fico",
-      collection_filtered: "/est%C3%BAdio%20fotogr%C3%A1fico/?category-1=est%C3%BAdio%20fotogr%C3%A1fico&brand=WorldView&facets=category-1%2Cbrand%27",
-      search: "/s?q=WorldView",
-    },
-    browser: 'electron',
-  },
-
   analytics: {
     // https://developers.google.com/tag-platform/tag-manager/web#standard_web_page_installation,
     gtmContainerId: "",
@@ -88,7 +76,6 @@ module.exports = {
 
   experimental: {
     nodeVersion: 18,
-    cypressVersion: 12,
   },
 
   vtexHeadlessCms: {
