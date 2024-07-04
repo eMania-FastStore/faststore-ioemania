@@ -2042,11 +2042,46 @@
     }
   },
   {
-    "name": "SideNavMenu",
+    "name": "BrandSlider",
     "schema": {
-      "title": "SideNavMenu",
-      "description": "Create Custom Menu",
-      "type": "object"
+      "title": "Marcas Home",
+      "description": "Marcas na home",
+      "type": "object",
+      "properties": {
+        "text": {
+          "title": "Texto",
+          "type": "string"
+        },
+        "link": {
+          "title": "Link Text",
+          "type": "string"
+        },
+        "logos": {
+          "title": "Logos",
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 20,
+          "items": {
+            "title": "Marca",
+            "type": "object",
+            "required": [ "image", "alt" ],
+            "properties": {
+              "image": {
+                "title": "Imagem",
+                "type": "string"
+              },
+              "link": {
+                "title": "Link marca",
+                "type": "string"
+              },
+              "alt": {
+                "title": "Alt",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
     }
   }
 ]

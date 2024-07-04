@@ -7,6 +7,7 @@ import RenderSections from 'src/components/cms/RenderSections'
 import { OverriddenDefaultBannerText as BannerText } from 'src/components/sections/BannerText/OverriddenDefaultBannerText'
 import { OverriddenDefaultHero as Hero } from 'src/components/sections/Hero/OverriddenDefaultHero'
 import Incentives from 'src/components/sections/Incentives'
+import { BrandSlider } from 'src/components/sections/BrandSlider/BrandSlider'
 import { OverriddenDefaultNewsletter as Newsletter } from 'src/components/sections/Newsletter/OverriddenDefaultNewsletter'
 import { OverriddenDefaultProductShelf as ProductShelf } from 'src/components/sections/ProductShelf/OverriddenDefaultProductShelf'
 import ProductTiles from 'src/components/sections/ProductTiles'
@@ -25,6 +26,7 @@ import storeConfig from '../../faststore.config'
 const COMPONENTS: Record<string, ComponentType<any>> = {
   Hero,
   Incentives,
+  BrandSlider,
   ProductShelf,
   ProductTiles,
   BannerText,
